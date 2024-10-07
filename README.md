@@ -64,9 +64,9 @@ backend - flask
 storage - SQLite db
 
 
-# NOTE:  The backend ports can be finnicky. It's currently set to run on port 5000, but feel free to change this, if your flask server starts on something different such as 5001. You may have to change the code in several places  so that it matches up with the flask server. 
+## NOTE:  The backend ports can be finnicky. It's currently set to run on port 5000, but feel free to change this, if your flask server starts on something different such as 5001. You may have to change the code in several places  so that it matches up with the flask server. 
 
- ## These are the files you'll want to change the port reference, depending on what your flask server is set at:
+ ### These are the files you'll want to change the port reference, depending on what your flask server is set at:
  1. constants.ts
  2. trendingco.tsx
  3. app.py at the bottom
