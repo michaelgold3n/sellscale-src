@@ -1,12 +1,6 @@
 # MySellScaleHood
 
-the simple investing interface that allows you to search for stock tickers, buy view trends, and manage your portfolio. Powered by YFinance API.
-
-## tech stack
-
-frontend - typescript
-backend - flask
-storage - SQLite db
+The simple investing interface that allows you to search for stock tickers, buy view trends, and manage your portfolio. Powered by YFinance API.
 
 ---
 
@@ -53,11 +47,21 @@ storage - SQLite db
     ```bash
     python init_db.py
     ```
+    
 
 5. **run server**
     ```bash
     python app.py #if needed, python3 app.py
     ```
+
+
+    ---
+
+## tech stack
+
+frontend - typescript
+backend - flask
+storage - SQLite db
 
 
 # NOTE:  The backend ports can be finnicky. It's currently set to run on port 5000, but feel free to change this, if your flask server starts on something different such as 5001. You may have to change the code in several places  so that it matches up with the flask server. 
