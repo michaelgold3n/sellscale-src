@@ -1,6 +1,6 @@
 "use client";
 
-import StockSearchSection from "../sections/SearchBar";
+import StockSearchSection from "../sections/searchbar";
 
 export default function SearchPage() {
   return (
