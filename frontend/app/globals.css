@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* styles.css */
+.flex-center-screen {
+  @apply flex flex-col justify-center items-center;
+}
+
+body {
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.dark body {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+.bg-background {
+  background-color: #ffffff;
+}
+
+.dark .bg-background {
+  background-color: #2a2a2a;
+}
+
+.text-foreground {
+  color: #333;
+}
+
+.dark .text-foreground {
+  color: #f0f0f0;
+}
+
+.text-teal {
+  color: rgb(3, 215, 165);
+}
+
+.navbar-content {
+  flex-grow: 1;
+  justify-content: center;
+  gap: 2rem;
+  padding-left: 2rem;
+}
+
+.navbar-item,
+.navbar-brand,
+.navbar-content a {
+  cursor: pointer;
+  transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-item:hover,
+.navbar-brand:hover,
+.navbar-content a:hover {
+  color: rgb(3, 215, 165);
+  transform: translateY(-2px);
+}
+
+.navbar-item:active,
+.navbar-brand:active,
+.navbar-content a:active {
+  opacity: 0.7;
+  transform: translateY(0);
+}
+
+.navbar-end {
+  margin-left: auto;
+  padding-right: 1rem;
+}
+
+/* Ensure the last NavbarContent (with the buttons) stays to the right */
+.navbar > div:last-child {
+  flex-grow: 0;
+}
+
+/* Add these styles to your existing globals.css file */
+
+.faq-accordion-item {
+  margin-bottom: 1rem;
+  border: 1px solid rgba(3, 215, 165, 0.2);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background-color: rgba(3, 215, 165, 0.05);
+}
+
+.faq-accordion-item:hover {
+  box-shadow: 0 0 20px 0 rgba(3, 215, 165, 0.3);
+  transform: translateY(-2px);
+}
+
+.faq-accordion-title {
+  font-weight: 600;
+  color: rgb(3, 215, 165);
+  padding: 1rem;
+  background-color: rgba(3, 215, 165, 0.1);
+}
+
+.faq-accordion-content {
+  padding: 1rem;
+  background-color: rgba(3, 215, 165, 0.05);
+}
+
+.topography-background {
+  background-color: #f0f0f0;
+  background-image: 
+    repeating-radial-gradient(circle at 0 0, transparent 0, #f0f0f0 10px),
+    repeating-linear-gradient(#e0e0e055, #e0e0e0);
+  background-blend-mode: multiply;
+  position: relative;
+  z-index: 0;
+}
+
+.dark .topography-background {
+  background-color: #1a1a1a;
+  background-image: 
+    repeating-radial-gradient(circle at 0 0, transparent 0, #2a2a2a 10px),
+    repeating-linear-gradient(#30303055, #303030);
+}
+
+.topography-background::before,
+.topography-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.topography-background::before {
+  background-image: 
+    repeating-radial-gradient(circle at 100% 150%, #ffffff 20%, transparent 25%),
+    repeating-radial-gradient(circle at 0% 50%, #ffffff 20%, transparent 25%);
+  background-size: 5em 5em, 5em 5em;
+  background-position: 0 0;
+  opacity: 0.1;
+  animation: topography-shift 60s linear infinite;
+}
+
+.dark .topography-background::before {
+  background-image: 
+    repeating-radial-gradient(circle at 100% 150%, #404040 20%, transparent 25%),
+    repeating-radial-gradient(circle at 0% 50%, #404040 20%, transparent 25%);
+}
+
+@keyframes topography-shift {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 5em 0, -5em 5em;
+  }
+}
+
+.topography-background::after {
+  background: 
+    radial-gradient(circle at 50% 50%, transparent 20%, #f0f0f0 20.5%, #f0f0f0 21%, transparent 21.5%, transparent),
+    radial-gradient(circle at 0% 50%, transparent 20%, #f0f0f0 20.5%, #f0f0f0 21%, transparent 21.5%, transparent),
+    radial-gradient(circle at 100% 50%, transparent 20%, #f0f0f0 20.5%, #f0f0f0 21%, transparent 21.5%, transparent);
+  background-size: 5em 5em, 5em 5em, 5em 5em;
+  background-position: 0 0;
+  opacity: 0.1;
+  animation: topography-pulse 30s ease-in-out infinite alternate;
+}
+
+.dark .topography-background::after {
+  background: 
+    radial-gradient(circle at 50% 50%, transparent 20%, #2a2a2a 20.5%, #2a2a2a 21%, transparent 21.5%, transparent),
+    radial-gradient(circle at 0% 50%, transparent 20%, #2a2a2a 20.5%, #2a2a2a 21%, transparent 21.5%, transparent),
+    radial-gradient(circle at 100% 50%, transparent 20%, #2a2a2a 20.5%, #2a2a2a 21%, transparent 21.5%, transparent);
+}
+
+@keyframes topography-pulse {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
